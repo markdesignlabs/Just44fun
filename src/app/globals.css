@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-shantell {
+  font-family: var(--font-shantell-sans), 'Shantell Sans', cursive, sans-serif;
+}
+
+:root {
+  --background: #0d0e1a;
+  --foreground: #f3f4f6;
+  --cyber-black: #0d0e1a;
+  --cyber-dark: #121324;
+  --cyber-card: #16182e;
+  --cyber-border: #282a4d;
+  --neon-purple: #9d4edd;
+  --neon-magenta: #e0218a;
+  --neon-pink: #f72585;
+  --neon-orange: #ff7700;
+  --neon-cyan: #00f0ff;
+}
+
+body {
+  background-color: #0d0e1a;
+  color: #f3f4f6;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #9d4edd;
+  color: #ffffff;
+}
+
+/* Custom Cyber Grid & Ambient Glows */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-dense {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(157, 78, 221, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(157, 78, 221, 0.07) 1px, transparent 1px);
+}
+
+.cyber-glow-purple {
+  box-shadow: 0 0 25px -4px rgba(157, 78, 221, 0.5), 0 0 10px -2px rgba(157, 78, 221, 0.3);
+}
+
+.cyber-glow-magenta {
+  box-shadow: 0 0 25px -4px rgba(224, 33, 138, 0.5), 0 0 10px -2px rgba(224, 33, 138, 0.3);
+}
+
+.cyber-glow-orange {
+  box-shadow: 0 0 20px -3px rgba(255, 119, 0, 0.45);
+}
+
+.cyber-border-glow:hover {
+  border-color: rgba(157, 78, 221, 0.7);
+  box-shadow: 0 0 20px -5px rgba(157, 78, 221, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #282a4d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9d4edd;
+}
+
+/* Pulse Animations */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
